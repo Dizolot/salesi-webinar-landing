@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ИИ‑тренажеры для B2B-продаж — вебинар Salesi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8fbff;
+        --text: #101828;
+        --accent: #0f62fe;
+        --muted: #667085;
+        --border-subtle: #d0d5dd;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .nav-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 48px;
+        padding: 0 16px;
+        max-width: 1040px;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(16, 24, 40, 0.06);
+      }
+
+      .nav-logo {
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .nav-logo:hover {
+        text-decoration: none;
+      }
+
+      .nav-link {
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .page {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 48px 24px 56px;
+      }
+
+      header {
+        margin-bottom: 48px;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hero-main {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .hero-side {
+        margin-top: 4px;
+      }
+
+      .hero-card {
+        border-radius: 16px;
+        padding: 14px 14px 12px;
+        background: radial-gradient(
+            circle at top left,
+            rgba(15, 98, 254, 0.12),
+            transparent 55%
+          ),
+          #ffffff;
+        box-shadow: 0 14px 32px rgba(15, 98, 254, 0.1);
+        border: 1px solid rgba(15, 98, 254, 0.12);
+        max-width: 260px;
+        font-size: 12px;
+        color: var(--text);
+      }
+
+      .hero-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+
+      .hero-card-title {
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .hero-card-pill {
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: rgba(15, 98, 254, 0.08);
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--accent);
+      }
+
+      .hero-card-body {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px 10px;
+        margin-top: 4px;
+      }
+
+      .hero-card-label {
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      .hero-card-value {
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .hero-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 8px;
+        font-size: 11px;
+      }
+
+      .hero-card-progress {
+        font-weight: 500;
+      }
+
+      .hero-card-score {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(15, 98, 254, 0.06);
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .hero-title {
+        font-size: 34px;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        margin: 4px 0 14px;
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+        line-height: 1.5;
+        color: var(--text);
+        margin: 0 0 8px;
+      }
+
+      .hero-subtitle-date {
+        font-weight: 600;
+      }
+
+      .hero-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--muted);
+        margin: 0 0 4px;
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 20px;
+        border-radius: 999px;
+        border: none;
+        background-color: var(--accent);
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.15s ease, transform 0.1s ease,
+          box-shadow 0.15s ease;
+        box-shadow: 0 8px 16px rgba(15, 98, 254, 0.18);
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        background-color: #0b4bd0;
+        outline: 2px solid rgba(15, 98, 254, 0.4);
+        outline-offset: 2px;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(15, 98, 254, 0.22);
+      }
+
+      .btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 10px rgba(15, 98, 254, 0.16);
+      }
+
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 20px;
+        border-radius: 999px;
+        border: 1px solid var(--accent);
+        background: transparent;
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.15s ease;
+      }
+
+      .btn-outline:hover,
+      .btn-outline:focus-visible {
+        background: rgba(15, 98, 254, 0.06);
+        text-decoration: none;
+      }
+
+      .hero-note {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .section-tag {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 6px;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      section {
+        background: #ffffff;
+        border-radius: var(--radius-lg);
+        padding: 18px 18px 20px;
+        box-shadow: 0 14px 40px rgba(15, 98, 254, 0.04);
+        border: 1px solid rgba(16, 24, 40, 0.03);
+      }
+
+      section.section-plain {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+
+      section + section {
+        margin-top: 0;
+      }
+
+      .section-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 0 16px;
+        letter-spacing: -0.01em;
+      }
+
+      .section-description {
+        font-size: 14px;
+        color: var(--muted);
+        margin: 0 0 14px;
+      }
+
+      .list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+      }
+
+      .list-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .list-marker {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        margin-top: 6px;
+        background-color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .list-text {
+        flex: 1;
+      }
+
+      .section-muted {
+        border: 1px dashed rgba(241, 75, 75, 0.5);
+        background: rgba(241, 75, 75, 0.02);
+      }
+
+      .section-muted .section-title {
+        font-size: 15px;
+      }
+
+      .section-muted .list-marker {
+        background-color: var(--muted);
+      }
+
+      /* Registration form */
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .form-row-inline {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .label {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      .label span {
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid var(--border-subtle);
+        padding: 9px 11px;
+        font-size: 14px;
+        font-family: inherit;
+        color: var(--text);
+        background-color: #ffffff;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease,
+          background-color 0.15s ease;
+      }
+
+      input[type="text"]:focus-visible,
+      input[type="email"]:focus-visible,
+      select:focus-visible {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 1px rgba(15, 98, 254, 0.18);
+      }
+
+      .checkbox-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 8px 10px;
+        border-radius: 10px;
+        background: rgba(16, 24, 40, 0.02);
+      }
+
+      .checkbox-row label {
+        font-weight: 500;
+      }
+
+      .checkbox-row input[type="checkbox"] {
+        margin-top: 3px;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        accent-color: var(--accent);
+      }
+
+      .form-footer {
+        margin-top: 6px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .form-badges {
+        margin-top: 6px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      .form-badge {
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(16, 24, 40, 0.03);
+      }
+
+      .btn-submit {
+        margin-top: 4px;
+        width: 100%;
+      }
+
+      /* Agenda */
+      .agenda-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .agenda-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(16, 24, 40, 0.06);
+        background: #ffffff;
+      }
+
+      .agenda-step-number {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--accent);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+
+      .agenda-step-title {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .agenda-step-desc {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 4px 0 0;
+        line-height: 1.5;
+      }
+
+      /* Speakers */
+      .speakers-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 10px;
+      }
+
+      .speaker-card {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .speaker-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid rgba(15, 98, 254, 0.3);
+        flex-shrink: 0;
+      }
+
+      .speaker-meta-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .speaker-meta-text {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .product-note {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 8px 0 0;
+        padding: 8px 10px;
+        border-radius: 10px;
+        background: rgba(16, 24, 40, 0.02);
+      }
+
+      /* Outcomes */
+      .checklist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .checklist-item {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+      }
+
+      .check-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(15, 98, 254, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      /* Results */
+      .results-section {
+        text-align: left;
+      }
+
+      .results-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 8px;
+      }
+
+      .result-card {
+        border-radius: 14px;
+        padding: 16px 18px;
+        background: #ffffff;
+        border: 1px solid rgba(16, 24, 40, 0.06);
+      }
+
+      .result-number {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--accent);
+      }
+
+      .result-label {
+        margin-top: 4px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* Next steps */
+      .next-steps-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .next-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(16, 24, 40, 0.06);
+        background: #ffffff;
+      }
+
+      .next-step-number {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--accent);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+
+      .next-step-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0 0 2px;
+      }
+
+      .next-step-desc {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .next-steps-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      /* FAQ */
+      .faq-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .faq-item {
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(16, 24, 40, 0.06);
+        padding: 10px 12px;
+        background-color: #ffffff;
+      }
+
+      .faq-question {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 0 4px;
+      }
+
+      .faq-answer {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      footer {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(16, 24, 40, 0.06);
+        font-size: 12px;
+        color: var(--muted);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        font-size: 13px;
+      }
+
+      .logo {
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
+      }
+
+      /* Layout on wider screens */
+      @media (min-width: 768px) {
+        .nav-bar {
+          padding: 0 32px;
+        }
+
+        .page {
+          padding: 64px 32px 72px;
+        }
+
+        header {
+          margin-bottom: 56px;
+        }
+
+        .hero {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 32px;
+        }
+
+        .hero-main {
+          max-width: 620px;
+        }
+
+        .hero-side {
+          margin-top: 0;
+        }
+
+        .hero-title {
+          font-size: 44px;
+        }
+
+        .hero-subtitle {
+          font-size: 18px;
+        }
+
+        .section-title {
+          font-size: 26px;
+        }
+
+        .hero-text {
+          font-size: 15px;
+        }
+
+        main {
+          gap: 48px;
+        }
+
+        .next-steps-grid {
+          flex-direction: row;
+        }
+
+        .next-step {
+          flex: 1;
+          flex-direction: column;
+        }
+
+        section {
+          padding: 22px 22px 24px;
+        }
+
+        .two-column-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 20px;
+        }
+
+        .form-row-inline {
+          flex-direction: row;
+        }
+
+        .form-row-inline .form-row {
+          flex: 1;
+        }
+
+        .btn-submit {
+          width: auto;
+          align-self: flex-start;
+        }
+
+        .results-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 18px;
+        }
+
+        .speakers-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .faq-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-title {
+          font-size: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <a href="https://salesi.ru" class="nav-logo" target="_blank" rel="noopener noreferrer">Salesi</a>
+      <a href="https://salesi.ru" class="nav-link" target="_blank" rel="noopener noreferrer">О продукте</a>
+    </nav>
+    <div class="page">
+      <header>
+        <div class="hero">
+          <div class="hero-main">
+            <div class="hero-tag">Живой онлайн‑вебинар</div>
+            <h1 class="hero-title">ИИ‑тренажеры для B2B-продаж</h1>
+            <p class="hero-subtitle">
+              <span class="hero-subtitle-date"
+                >5 марта, 16:00 (МСК)</span
+              >
+              <!-- Измените дату и время вебинара при необходимости -->
+              — разберём, как AI-симуляции ускоряют онбординг и сокращают
+              провалы на важных сделках
+            </p>
+            <p class="hero-text">
+              Salesi покажет, как руководители продаж используют виртуальные
+              тренажеры, чтобы готовить менеджеров к звонкам и не сливать
+              крупные сделки
+            </p>
+            <div class="hero-cta">
+              <a class="btn-primary" href="#registration">Забронировать место</a>
+              <a class="btn-outline" href="https://salesi.ru" target="_blank" rel="noopener noreferrer">Узнать больше о Salesi</a>
+            </div>
+            <span class="hero-note">Участие бесплатно, запись пришлём всем зарегистрированным</span>
+          </div>
+          <div class="hero-side" aria-hidden="true">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <div class="hero-card-title">ИИ‑клиент активен</div>
+                <div class="hero-card-pill">LIVE</div>
+              </div>
+              <div class="hero-card-body">
+                <div>
+                  <div class="hero-card-label">Входящий звонок</div>
+                  <div class="hero-card-value">B2B-клиент</div>
+                </div>
+                <div>
+                  <div class="hero-card-label">Темп речи</div>
+                  <div class="hero-card-value">Оптимальный</div>
+                </div>
+                <div>
+                  <div class="hero-card-label">Качество аргументации</div>
+                  <div class="hero-card-value">94/100</div>
+                </div>
+                <div>
+                  <div class="hero-card-label">Работа с возражениями</div>
+                  <div class="hero-card-value">Отлично</div>
+                </div>
+              </div>
+              <div class="hero-card-footer">
+                <span class="hero-card-progress">Прогресс 85%</span>
+                <span class="hero-card-score">+250 баллов</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="two-column-grid section-plain">
+          <section id="for-whom">
+            <h2 class="section-title">Для кого вебинар</h2>
+            <ul class="list">
+              <li class="list-item">
+                <span class="list-marker"></span>
+                <span class="list-text"
+                  >Руководители B2B-продаж с командами 10+ менеджеров</span
+                >
+              </li>
+              <li class="list-item">
+                <span class="list-marker"></span>
+                <span class="list-text"
+                  >Enablement-лиды/HR, которые отвечают за обучение сейлзов</span
+                >
+              </li>
+              <li class="list-item">
+                <span class="list-marker"></span>
+                <span class="list-text"
+                  >Основатели/операционные директоры B2B-сервисов (SaaS, финтех,
+                  логистика, интеграторы)</span
+                >
+              </li>
+            </ul>
+          </section>
+
+          <section id="not-for" class="section-muted">
+            <h2 class="section-title">Кому не подойдёт</h2>
+            <ul class="list">
+              <li class="list-item">
+                <span class="list-marker"></span>
+                <span class="list-text">B2C-ритейл и офлайн-разница</span>
+              </li>
+              <li class="list-item">
+                <span class="list-marker"></span>
+                <span class="list-text">Команды &lt;5 продавцов</span>
+              </li>
+              <li class="list-item">
+                <span class="list-marker"></span>
+                <span class="list-text"
+                  >Отделы без регулярных сложных сделок (если продают только
+                  inbound self-service)</span
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section id="results" class="results-section">
+          <div class="section-tag">РЕЗУЛЬТАТЫ</div>
+          <h2 class="section-title">Результаты, которым доверяют</h2>
+          <p class="section-description">
+            На вебинаре разберём, как Salesi помогает командам продаж получать
+            такие результаты.
+          </p>
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="result-number">47%</div>
+              <div class="result-label">
+                Ускорение онбординга новых менеджеров
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-number">2.5x</div>
+              <div class="result-label">
+                Рост конверсии в течение 3 месяцев
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-number">89%</div>
+              <div class="result-label">
+                Менеджеров рекомендуют Salesi коллегам
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-number">15ч</div>
+              <div class="result-label">
+                Экономия времени руководителя продаж в неделю
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="agenda">
+          <div class="section-tag">ПРОГРАММА</div>
+          <h2 class="section-title">Что будет на вебинаре</h2>
+          <div class="agenda-steps">
+            <article class="agenda-step">
+              <div class="agenda-step-number">01</div>
+              <div class="agenda-step-content">
+                <h3 class="agenda-step-title">
+                  «Кейс: как AI-тренажер сокращает адаптацию с 9 до 5 недель»
+                </h3>
+                <p class="agenda-step-desc">Реальный кейс из B2B-команды: цифры, процесс, результат внедрения AI-тренажера.</p>
+              </div>
+            </article>
+            <article class="agenda-step">
+              <div class="agenda-step-number">02</div>
+              <div class="agenda-step-content">
+                <h3 class="agenda-step-title">
+                  «Разбор процессов участников: найдём узкие места в обучении»
+                </h3>
+                <p class="agenda-step-desc">Интерактивный разбор: покажем типичные узкие места и как их устранить с помощью симуляций.</p>
+              </div>
+            </article>
+            <article class="agenda-step">
+              <div class="agenda-step-number">03</div>
+              <div class="agenda-step-content">
+                <h3 class="agenda-step-title">
+                  «Чек-лист внедрения + Q&amp;A с командой Salesi»
+                </h3>
+                <p class="agenda-step-desc">Готовый чек-лист для вашего отдела + ответы на вопросы от команды Salesi.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="speakers">
+          <div class="section-tag">СПИКЕРЫ</div>
+          <h2 class="section-title">Организаторы</h2>
+          <div class="speakers-grid">
+            <article class="speaker-card">
+              <img class="speaker-avatar" src="photo_2026-02-26_19-24-09.jpg" alt="Алексей Черняк" />
+              <div class="speaker-meta">
+                <div class="speaker-meta-title">Алексей Черняк - Основатель Salesi</div>
+                <p class="speaker-meta-text">
+                  Сооснователь United Investors, Groupon
+                  Russia (Darberry).
+                </p>
+              </div>
+            </article>
+            <article class="speaker-card">
+              <img class="speaker-avatar" src="photo_2026-02-26_19-28-48.jpg" alt="Дмитрий Золотарев" />
+              <div class="speaker-meta">
+                <div class="speaker-meta-title">
+                  Дмитрий Золотарев — Head of Sales Salesi
+                </div>
+                <p class="speaker-meta-text">
+                  Серийный предприниматель, ex-CEO Another World (450+ partners
+                  in 55 countries).
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="product-note">
+            Salesi — виртуальный тренер, который помогает B2B-командам готовиться
+            к звонкам, снижает ручную работу и даёт аналитику по навыкам.
+            Организаторы вебинара покажут реальные кейсы внедрения Salesi в
+            B2B-командах.
+          </p>
+        </section>
+
+        <section id="outcomes">
+          <h2 class="section-title">Что получите</h2>
+          <ul class="checklist">
+            <li class="checklist-item">
+              <span class="check-icon">✓</span>
+              <span
+                >Чек-лист внедрения AI-тренажера в отдел продаж</span
+              >
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon">✓</span>
+              <span>Доступ к записи вебинара и живым разбором</span>
+            </li>
+            <li class="checklist-item">
+              <span class="check-icon">✓</span>
+              <span
+                >Приглашение в закрытый пилот Salesi (2 недели бесплатно)</span
+              >
+            </li>
+          </ul>
+          <p class="section-description">
+            Осталось несколько мест — забронируйте своё.
+          </p>
+          <div class="hero-cta" style="margin-top: 16px">
+            <a class="btn-primary" href="#registration">Забронировать место</a>
+          </div>
+        </section>
+
+        <section id="registration">
+          <div class="section-tag">РЕГИСТРАЦИЯ</div>
+          <h2 class="section-title">Регистрация на вебинар</h2>
+          <p class="section-description">
+            Заполните форму, чтобы забронировать место на вебинаре. Все поля
+            обязательны к заполнению.
+          </p>
+          <p class="section-description">
+            <strong>5 марта, 16:00 (МСК)</strong> — онлайн в Zoom
+            <!-- Обновите дату/время и площадку при изменении формата вебинара -->
+          </p>
+          <!-- Измените значение action на URL вашей формы/CRM или обработчика -->
+          <form class="form" action="#" method="post">
+            <div class="form-row-inline">
+              <div class="form-row">
+                <label class="label" for="name">Имя</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Иван"
+                />
+              </div>
+              <div class="form-row">
+                <label class="label" for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="name@company.ru"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="label" for="company">Компания</label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                required
+                placeholder="Salesi"
+              />
+            </div>
+
+            <div class="form-row">
+              <label class="label" for="team-size">Размер B2B-команды</label>
+              <select id="team-size" name="team_size" required>
+                <option value="" disabled selected>Выберите вариант</option>
+                <option value="5-10">5-10</option>
+                <option value="10-30">10-30</option>
+                <option value="30+">30+</option>
+              </select>
+            </div>
+
+            <div class="checkbox-row">
+              <input
+                id="responsible"
+                name="responsible"
+                type="checkbox"
+                required
+              />
+              <label for="responsible">
+                Я отвечаю за результат/обучение B2B-продажников
+              </label>
+            </div>
+
+            <button class="btn-primary btn-submit" type="submit">
+              Отправить заявку
+            </button>
+
+            <p class="form-footer">
+              После регистрации пришлём подтверждение и ссылку на Zoom.
+            </p>
+            <div class="form-badges">
+              <span class="form-badge">Участие бесплатно</span>
+              <span class="form-badge">Запись пришлём всем зарегистрированным</span>
+            </div>
+          </form>
+        </section>
+
+        <section id="next-steps">
+          <div class="section-tag">ЧТО ДАЛЬШЕ</div>
+          <h2 class="section-title">Что дальше после вебинара</h2>
+          <div class="next-steps-grid">
+            <div class="next-step">
+              <div class="next-step-number">01</div>
+              <div>
+                <p class="next-step-title">Вебинар</p>
+                <p class="next-step-desc">Разберём кейсы и получите чек-лист внедрения</p>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="next-step-number">02</div>
+              <div>
+                <p class="next-step-title">Пилот Salesi</p>
+                <p class="next-step-desc">2 недели бесплатного доступа для вашей команды</p>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="next-step-number">03</div>
+              <div>
+                <p class="next-step-title">Внедрение</p>
+                <p class="next-step-desc">Полноценная интеграция AI-тренажера в процессы продаж</p>
+              </div>
+            </div>
+          </div>
+          <div class="next-steps-cta">
+            <a class="btn-primary" href="#registration">Забронировать место на вебинар</a>
+            <a class="btn-outline" href="https://salesi.ru" target="_blank" rel="noopener noreferrer">Попробовать Salesi бесплатно</a>
+          </div>
+        </section>
+
+        <section id="faq" class="section-plain">
+          <h2 class="section-title">FAQ</h2>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <p class="faq-question">Сколько длится вебинар?</p>
+              <p class="faq-answer">45 минут + Q&amp;A</p>
+            </div>
+            <div class="faq-item">
+              <p class="faq-question">Будет ли запись?</p>
+              <p class="faq-answer">
+                Да, пришлём всем зарегистрированным
+              </p>
+            </div>
+            <div class="faq-item">
+              <p class="faq-question">Сколько стоит участие?</p>
+              <p class="faq-answer">
+                Бесплатно, но места ограничены
+              </p>
+            </div>
+            <div class="faq-item">
+              <p class="faq-question">Что если я новичок в AI?</p>
+              <p class="faq-answer">
+                Расскажем с нуля, но фокус на практиках для действующих команд
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-row">
+          <div>
+            <div class="logo">Salesi</div>
+            <div style="margin-top: 6px">&copy; 2026 Salesi. Все права защищены.</div>
+          </div>
+          <div class="footer-links">
+            <a href="https://salesi.ru" target="_blank" rel="noopener noreferrer">О продукте</a>
+            <a href="https://salesi.ru" target="_blank" rel="noopener noreferrer">Демо</a>
+            <a href="mailto:hello@salesi.ru">hello@salesi.ru</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
